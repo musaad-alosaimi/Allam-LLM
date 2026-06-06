@@ -302,6 +302,13 @@ header {
   filter: brightness(0) invert(1);
 }
 
+.header-qafia-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
 .bubble {
   padding: 13px 18px;
   border-radius: var(--radius);
