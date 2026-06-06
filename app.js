@@ -11,6 +11,41 @@ const messagesEl = document.getElementById("messages");
 const inputEl    = document.getElementById("input");
 const sendBtn    = document.getElementById("send-btn");
 const apiKeyEl   = document.getElementById("api-key");
+const saveKeyBtn = document.getElementById("save-key-btn");
+
+// ── API key persistence ─────────────────────────────────────────
+const STORAGE_KEY = "groq_api_key";
+
+// Load saved key on startup
+const savedKey = localStorage.getItem(STORAGE_KEY);
+if (savedKey) {
+  apiKeyEl.value = savedKey;
+  saveKeyBtn.textContent = "Saved ✓";
+  saveKeyBtn.classList.add("saved");
+}
+
+saveKeyBtn.addEventListener("click", () => {
+  const key = apiKeyEl.value.trim();
+  if (!key) {
+    localStorage.removeItem(STORAGE_KEY);
+    saveKeyBtn.textContent = "Save";
+    saveKeyBtn.classList.remove("saved");
+    return;
+  }
+  localStorage.setItem(STORAGE_KEY, key);
+  saveKeyBtn.textContent = "Saved ✓";
+  saveKeyBtn.classList.add("saved");
+  // Reset label after 2 seconds
+  setTimeout(() => {
+    saveKeyBtn.textContent = "Saved ✓";
+  }, 2000);
+});
+
+// Reset button state when user edits the key field
+apiKeyEl.addEventListener("input", () => {
+  saveKeyBtn.textContent = "Save";
+  saveKeyBtn.classList.remove("saved");
+});
 
 // ── API ────────────────────────────────────────────────────────
 async function callAllam(history, apiKey) {
