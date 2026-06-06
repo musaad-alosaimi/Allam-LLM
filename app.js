@@ -82,7 +82,15 @@ function renderMessage(role, text) {
 
   const label = document.createElement("div");
   label.className = "message-label";
-  label.textContent = role === "user" ? "You" : role === "assistant" ? "ALLAM 2" : "Error";
+  if (role === "user") {
+    const logo = document.createElement("img");
+    logo.src = "Qafia.png";
+    logo.alt = "Qafia";
+    logo.className = "qafia-logo";
+    label.appendChild(logo);
+  } else {
+    label.textContent = role === "assistant" ? "ALLAM 2" : "Error";
+  }
 
   const bubble = document.createElement("div");
   bubble.className = "bubble";

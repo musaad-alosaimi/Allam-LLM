@@ -294,6 +294,14 @@ header {
 
 .message.user .message-label { color: var(--lime); opacity: 0.75; }
 
+.qafia-logo {
+  height: 22px;
+  width: auto;
+  display: block;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+}
+
 .bubble {
   padding: 13px 18px;
   border-radius: var(--radius);
