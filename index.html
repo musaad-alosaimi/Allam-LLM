@@ -3,16 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALLAM 2 · 7B — GroqCloud</title>
+  <title>ALLAM 2 · HUMAIN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <div class="header-icon">✦</div>
-    <div class="header-text">
-      <span class="header-title">ALLAM 2 · 7B</span>
-      <span class="header-sub">Powered by GroqCloud</span>
+    <div class="header-left">
+      <div class="logo-mark">
+        <!-- HUMAIN-style H mark -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="5" height="24" rx="1" fill="currentColor"/>
+          <rect x="23" y="4" width="5" height="24" rx="1" fill="currentColor"/>
+          <rect x="4" y="13.5" width="24" height="5" rx="1" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="header-brand">
+        <span class="brand-humain">HUMAIN</span>
+        <span class="brand-divider">·</span>
+        <span class="brand-model">ALLAM 2 <em>7B</em></span>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="status-dot"></span>
+      <span class="status-label">Live</span>
     </div>
   </header>
 
@@ -21,14 +38,12 @@
     <input
       type="password"
       id="api-key"
-      placeholder="gsk_••••••••••••••••••••••••••••••••••••••••••••••••••••••"
+      placeholder="gsk_••••••••••••••••••••••••••••••••"
       autocomplete="off"
       spellcheck="false"
     />
     <button id="save-key-btn" aria-label="Save API key">Save</button>
-    <a class="api-link" href="https://console.groq.com" target="_blank" rel="noopener">
-      Get free key ↗
-    </a>
+    <a class="api-link" href="https://console.groq.com" target="_blank" rel="noopener">Get key ↗</a>
   </div>
 
   <div id="messages" role="log" aria-live="polite" aria-label="Chat messages"></div>
@@ -36,13 +51,13 @@
   <div class="composer">
     <textarea
       id="input"
-      placeholder="Type a message… (Enter to send, Shift+Enter for new line)"
+      placeholder="اسألني أي شيء… / Ask me anything…"
       rows="1"
       dir="auto"
       aria-label="Message input"
     ></textarea>
     <button id="send-btn" aria-label="Send message">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="22" y1="2" x2="11" y2="13"></line>
         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
       </svg>
