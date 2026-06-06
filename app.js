@@ -25,7 +25,9 @@ if (savedKey) {
 }
 
 saveKeyBtn.addEventListener("click", () => {
-  const key = apiKeyEl.value.trim();
+  // Strip any non-ASCII characters that would break HTTP headers
+  const key = apiKeyEl.value.trim().replace(/[^\x00-\xFF]/g, "");
+  apiKeyEl.value = key;
   if (!key) {
     localStorage.removeItem(STORAGE_KEY);
     saveKeyBtn.textContent = "Save";
@@ -49,6 +51,11 @@ apiKeyEl.addEventListener("input", () => {
 
 // ── API ────────────────────────────────────────────────────────
 async function callAllam(history, apiKey) {
+  // HTTP headers only allow ISO-8859-1 characters; non-ASCII in the key causes a fetch error
+  if (/[^\x00-\xFF]/.test(apiKey)) {
+    throw new Error("API key contains invalid characters. Please clear the key field and paste it again.");
+  }
+
   const res = await fetch(API_URL, {
     method: "POST",
     headers: {
