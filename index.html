@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALLAM 2 · 7B — GroqCloud</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-icon">✦</div>
+    <div class="header-text">
+      <span class="header-title">ALLAM 2 · 7B</span>
+      <span class="header-sub">Powered by GroqCloud</span>
+    </div>
+  </header>
+
+  <div class="api-bar">
+    <label for="api-key">API Key</label>
+    <input
+      type="password"
+      id="api-key"
+      placeholder="gsk_••••••••••••••••••••••••••••••••••••••••••••••••••••••"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <a class="api-link" href="https://console.groq.com" target="_blank" rel="noopener">
+      Get free key ↗
+    </a>
+  </div>
+
+  <div id="messages" role="log" aria-live="polite" aria-label="Chat messages"></div>
+
+  <div class="composer">
+    <textarea
+      id="input"
+      placeholder="Type a message… (Enter to send, Shift+Enter for new line)"
+      rows="1"
+      dir="auto"
+      aria-label="Message input"
+    ></textarea>
+    <button id="send-btn" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
